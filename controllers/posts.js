@@ -6,6 +6,7 @@ router.route('/')
   .get(function(req, res) {
     Post.find(function(err, posts) {
       if (err) return res.status(500).send(err);
+
       var post = posts.map(function(data) {
         return {"id": data.id, "title": data.title, "categories": data.categories};
       })

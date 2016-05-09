@@ -17,7 +17,7 @@ app.use(webpackHotMiddleware(compiler));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname + '/')));
 
-// Database stuff
+// Database
 mongoose.connect('mongodb://localhost/drhorriblesblog');
 app.use('/api/posts', require('./controllers/posts'));
 
@@ -26,5 +26,5 @@ app.get('/', function(req, res) {
 })
 
 app.listen(port, function() {
-  console.log('Captain Hammer: ' + port + ' Dr. Horrible: 1')
+  console.log('Captain Hammer: ' + port + ' | Dr. Horrible: 1')
 });
