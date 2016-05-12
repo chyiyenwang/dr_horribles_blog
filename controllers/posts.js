@@ -8,7 +8,7 @@ router.route('/')
       if (err) return res.status(500).send(err);
 
       var post = posts.map(function(data) {
-        return {"id": data.id, "title": data.title, "categories": data.categories};
+        return {"id": data.id, "title": data.title};
       })
       res.send(post)
     })
