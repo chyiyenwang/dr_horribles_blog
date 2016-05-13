@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import { reduxForm } from 'redux-form';
+import {reduxForm} from 'redux-form';
 import {createPost} from '../actions/index';
 import {Link} from 'react-router';
 
@@ -15,6 +15,10 @@ class PostsNew extends Component {
       });
   }
 
+  isWarning(label) {
+    return `form group ${label.touched && label.invalid ? 'has-danger' : ''}`
+  }
+
   render() {
     // const handleSubmit = this.props.handleSubmit
     // const title = this.props.fields.title
@@ -24,7 +28,7 @@ class PostsNew extends Component {
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <h3>Create New Post</h3>
 
-        <div className={`form group ${title.touched && title.invalid ? 'has-danger' : ''}`}>
+        <div className={this.isWarning(title)}>
           <label>Title</label>
           <input type="text" className="form-control" {...title} />
           <div className="text-help">
@@ -32,7 +36,7 @@ class PostsNew extends Component {
           </div>
         </div>
 
-        <div className={`form group ${title.touched && title.invalid ? 'has-danger' : ''}`}>
+        <div className={this.isWarning(content)}>
           <label>Content</label>
           <textarea className="form-control" {...content} />
           <div className="text-help">
