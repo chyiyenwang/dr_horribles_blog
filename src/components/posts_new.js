@@ -15,8 +15,8 @@ class PostsNew extends Component {
       });
   }
 
-  isWarning(label) {
-    return `form group ${label.touched && label.invalid ? 'has-danger' : ''}`
+  isWarning(props) {
+    return `form group ${props.touched && props.invalid ? 'has-danger' : ''}`
   }
 
   render() {
