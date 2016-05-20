@@ -9,7 +9,15 @@
   background-image: none !important;
 }
 
+body {
+  background-color: #513EA7;
+  color: #FFFFFF;
+}
 
 form a {
   margin: 10px 5px;
+}
+
+.container {
+  background-color: #9D84D7; 
 }
